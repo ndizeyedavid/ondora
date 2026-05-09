@@ -90,3 +90,6 @@ typings/
 
 # Electron-Forge
 out/
+
+# vite config timestamps
+*.mts.timestamp*
