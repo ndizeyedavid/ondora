@@ -2,7 +2,7 @@
 
 > **"Where rhythm meets geometry."**
 
-Ondora was born from the moments when I close my eyes while listening to a track and see an entire world taking shape. I wanted to build a bridge between those internal visuals, the shifting waves, the glowing ambients, and the rhythmic pulses—and the screen. This is a tool to visualize exactly what the mind sees when the music takes over.
+Ondora was born from the moments when I close my eyes while listening to a track and see an entire world taking shape. I wanted to build a bridge between those internal visuals, the shifting waves, the glowing ambients, and the rhythmic pulses and the screen. This is a tool to visualize exactly what the mind sees when the music takes over.
 
 ## 🧬 The Anatomy of Ondora
 
@@ -35,14 +35,14 @@ Together, they form **Ondora**: A smooth, wave-driven sensory experience for mus
 
 ### Prerequisites
 
-- Node.js (v18+)
-- npm or yarn
+- Node.js (v21+)
+- npm
 
 ### Installation
 
 1. **Clone the repo:**
    ```bash
-   git clone [https://github.com/your-username/ondora.git](https://github.com/your-username/ondora.git)
+   git clone https://github.com/ndizeyedavid/ondora
    ```
 2. **Install dependencies:**
    ```bash
