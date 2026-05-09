@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --color-black: #050505;
+  --color-white: #f2f2f2;
+  --color-primary: #ebabc4;
+  --color-accent: #d4a7be;
+  --color-border: #2b2730;
+  --color-zinc-950: #0a0a0a;
+}
+
 @layer base {
   .drag-region {
     -webkit-app-region: drag;
@@ -11,5 +20,36 @@
 }
 
 body {
-  @apply bg-black text-white overflow-hidden;
+  @apply bg-black text-white overflow-hidden selection:bg-accent/30;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.brutalist-border {
+  @apply border border-border;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+@keyframes orb-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+.animate-orb {
+  animation: orb-float 6s ease-in-out infinite;
 }

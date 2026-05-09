@@ -1,14 +1,12 @@
 import React from "react";
 import TitleBar from "../components/TitleBar";
+import Dashboard from "../components/Dashboard";
 
 export default function App() {
   return (
-    <div className="flex flex-col h-screen bg-black">
+    <div className="flex flex-col h-screen bg-black overflow-hidden">
       <TitleBar />
-      <main className="flex-1 overflow-auto p-4">
-        <p className="text-lg">App Mellow</p>
-        <div className="size-52 bg-radial from-blue-600 to-purple-500 p-2 relative rounded-xl mt-4"></div>
-      </main>
+      <Dashboard />
     </div>
   );
 }
