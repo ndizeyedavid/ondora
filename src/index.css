@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@layer base {
+  .drag-region {
+    -webkit-app-region: drag;
+  }
+
+  .no-drag-region {
+    -webkit-app-region: no-drag;
+  }
+}
+
+body {
+  @apply bg-black text-white overflow-hidden;
+}

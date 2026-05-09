@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, Menu, ipcMain } from "electron";
 import path from "node:path";
 import started from "electron-squirrel-startup";
 
@@ -8,10 +8,16 @@ if (started) {
 }
 
 const createWindow = () => {
+  // Remove default menu
+  Menu.setApplicationMenu(null);
+
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
+    autoHideMenuBar: true,
+    titleBarStyle: "hidden", // macOS specific
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
@@ -28,6 +34,24 @@ const createWindow = () => {
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
+
+  ipcMain.on("window-control", (_event, action) => {
+    switch (action) {
+      case "minimize":
+        mainWindow.minimize();
+        break;
+      case "maximize":
+        if (mainWindow.isMaximized()) {
+          mainWindow.unmaximize();
+        } else {
+          mainWindow.maximize();
+        }
+        break;
+      case "close":
+        mainWindow.close();
+        break;
+    }
+  });
 };
 
 // This method will be called when Electron has finished
