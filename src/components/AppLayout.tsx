@@ -1,18 +1,18 @@
 import { Play, Plus, Repeat, SkipBack, SkipForward } from "lucide-react";
+import AllSongs from "./Songs/AllSongs";
+import VolumeSlider from "./Volume/VolumeSlider";
 
 export default function AppLayout() {
   return (
     <div className="grid grid-cols-2">
       {/* first half */}
-      <div className="grid grid-cols-2">
+      <div>
         {/* container1 */}
-        <div className="grid grid-cols-2">
-          <div className="grid grid-rows-2">
-            <div>More songs</div>
-            <div>Volume mixer</div>
+        <div className="grid grid-cols-2 gap-2 p-1">
+          <div className="grid grid-rows-2 gap-2">
+            <AllSongs />
+            <VolumeSlider />
           </div>
-
-          <div>thumbnail</div>
         </div>
 
         {/* container2 */}
